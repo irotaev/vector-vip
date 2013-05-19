@@ -59,13 +59,14 @@ input {
   vertical-align: middle;
 }
 #wrapper {
+  position: relative;
   width: 1008px;
   margin: 0 auto;
   padding: 0 8px;
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  background: url(../img/shared/wrapper-side-bg.png)repeat-y;
+  //background: url(../img/shared/wrapper-side-bg.png)repeat-y;
   overflow: hidden;
   background-color: #373636;
 }
@@ -123,8 +124,7 @@ input {
 #footer {
   width: 1024px;
   margin: -66px auto 0;
-  height: 55px;
-  background: #BFF08E;
+  height: 48px;
   position: fixed !important;
   bottom: 0;
   left: 50%;

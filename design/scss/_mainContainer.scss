@@ -99,3 +99,22 @@
     }
   }
 }
+
+
+// Специально для секций контента
+#middle-scrolling-section {
+  background: url(../img/content/middle-scrolling-section/mss-bg.png) left top repeat;
+}
+#main-border-left, #main-border-right {
+  height: 100%;
+  width: 13px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../img/shared/main-border-left.png) left top repeat-y;
+  z-index: 100;
+}
+#main-border-right {
+  background: url(../img/shared/main-border-right.png) left top repeat-y;
+  left: 1011px;
+}

@@ -1,16 +1,17 @@
 #footer {
   position: relative;
-  background: url(../img/shared/footer-bottom-bg.jpg) no-repeat center bottom;
+  background-color: transparent;
+  //background: url(../img/shared/footer-bottom-bg.png) no-repeat center bottom;
 
   .wrapper {
-    margin: 0 8px 8px 8px;
+    //margin: 0 8px 8px 8px;
     height: 48px;
   }
 
   .right-block, .left-block, .center-block {
     position: relative;
     float: left;
-    width: 461px;
+    width: 469px;
     height: inherit;
     float: left;
     background-color: $_grey;

@@ -16,6 +16,12 @@
     <script type="text/javascript" src="js/backbone-min.js"></script>
     <script type="text/javascript" src="js/test.js"></script>
 
+    <!--Плагин фотогалереи и сопутствующие библиотеки-->
+    <script type="text/javascript" src="/js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="/css/fancybox/jquery.fancybox.css" type="text/css" media="screen, projection" />
+    <!-- /// Плагин фотогалереи и сопутствующие библиотеки-->
+
     <!-- Подключение подсказок -->
     <link rel="stylesheet" href="css/tip-darkgray/tip-darkgray.css" type="text/css" media="screen, projection" />
     <script type="text/javascript" src="js/jquery.poshytip.min.js"></script>
@@ -24,6 +30,8 @@
 
 <body>
 <div id="wrapper">
+    <div id="main-border-left"></div>
+    <div id="main-border-right"></div>
 
     <header id="header">
         <div class="wrapper">
@@ -34,64 +42,16 @@
                 <nav id="left-menu" class="left-menu-block">
                     <ul class="mainMenu">
                         <li class="info">
-                            <a href="#">О компании</a>
-                            <div class="submenu">
-                                <ul class="submenu-wrapper">
-                                    <li><div class="strelka"></div><a href="#">Подпункт 1</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 2</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 3</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 4</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 5</a></li>
-                                </ul>
-                            </div>
+                            <a href="#">Главная</a>
                         </li>
                         <li class="info">
-                            <a href="#">Клиентам</a>
-                            <div class="submenu">
-                                <ul class="submenu-wrapper">
-                                    <li><div class="strelka"></div><a href="#">Подпункт 1</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 2</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 3</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 4</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 5</a></li>
-                                </ul>
-                            </div>
+                            <a href="#">О компаниии</a>
                         </li>
                         <li class="info">
-                            <a href="#">Кабинет</a>
-                            <div class="submenu">
-                                <ul class="submenu-wrapper">
-                                    <li><div class="strelka"></div><a href="#">Подпункт 1</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 2</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 3</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 4</a></li>
-                                    <li><div class="strelka"></div><a href="#">Подпункт 5</a></li>
-                                </ul>
-                            </div>
+                        <a href="#">Сотрудничество</a>
                         </li>
                         <li class="info">
-                        <a href="#">Каталог</a>
-                        <div class="submenu">
-                        <ul class="submenu-wrapper">
-                        <li><div class="strelka"></div><a href="#">Подпункт 1</a></li>
-                        <li><div class="strelka"></div><a href="#">Подпункт 2</a></li>
-                        <li><div class="strelka"></div><a href="#">Подпункт 3</a></li>
-                        <li><div class="strelka"></div><a href="#">Подпункт 4</a></li>
-                        <li><div class="strelka"></div><a href="#">Подпункт 5</a></li>
-                        </ul>
-                        </div>
-                        </li>
-                        <li class="info">
-                        <a href="#">Форум</a>
-                        <div class="submenu">
-                        <ul class="submenu-wrapper">
-                        <li><div class="strelka"></div><a href="#">Подпункт 1</a></li>
-                        <li><div class="strelka"></div><a href="#">Подпункт 2</a></li>
-                        <li><div class="strelka"></div><a href="#">Подпункт 3</a></li>
-                        <li><div class="strelka"></div><a href="#">Подпункт 4</a></li>
-                        <li><div class="strelka"></div><a href="#">Подпункт 5</a></li>
-                        </ul>
-                        </div>
+                        <a href="#">Наши работы</a>
                         </li>
                         <!--<li class="info">-->
                         <!--<a href="#">Прайс-лист</a>-->
@@ -186,14 +146,32 @@
                                 <div class="av-content">
                                     <table class="gallery">
                                         <tr>
-                                            <td><div><a href="#" title='пример строительных работ 1'><img src="img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                            <td><div><a href="#" title='пример строительных работ 2'><img src="img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                            <td><div><a href="#" title='пример строительных работ 3'><img src="img/content/home-gallery-img.png" alt=""/></a></div></td>
+                                            <td><div>
+                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 1" rel="group1">
+                                                    <img src="img/content/home-gallery-img.png" alt=""/>
+                                                </a></div></td>
+                                            <td><div>
+                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 2" rel="group1">
+                                                    <img src="img/content/home-gallery-img.png" alt=""/>
+                                                </a></div></td>
+                                            <td><div>
+                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 3" rel="group1">
+                                                    <img src="img/content/home-gallery-img.png" alt=""/>
+                                                </a></div></td>
                                         </tr>
                                         <tr>
-                                            <td><div><a href="#" title='пример строительных работ 4'><img src="img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                            <td><div><a href="#" title='пример строительных работ 5'><img src="img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                            <td><div><a href="#" title='пример строительных работ 6'><img src="img/content/home-gallery-img.png" alt=""/></a></div></td>
+                                            <td><div>
+                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 4" rel="group2">
+                                                    <img src="img/content/home-gallery-img.png" alt=""/>
+                                                </a></div></td>
+                                            <td><div>
+                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 5" rel="group2">
+                                                    <img src="img/content/home-gallery-img.png" alt=""/>
+                                                </a></div></td>
+                                            <td><div>
+                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 6" rel="group2">
+                                                    <img src="img/content/home-gallery-img.png" alt=""/>
+                                                </a></div></td>
                                         </tr>
                                     </table>
                                 </div>

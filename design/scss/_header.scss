@@ -1,10 +1,9 @@
 #header {
   position: relative;
-  background: url(../img/shared/header-top-bg.jpg) no-repeat center top;
 
   .wrapper {
     position: relative;
-    margin: 8px 8px 0 8px;
+    //margin: 8px 8px 0 8px;
     background-color: $_grey;
     box-shadow: 0 1px 15px 1px #000;
     height: inherit;
@@ -20,6 +19,7 @@
       background: url(../img/header/menu-btn.png) no-repeat;
       width: 283px;
       height: 76px;
+      cursor: pointer;
     }
 
     // Главное меню слева
