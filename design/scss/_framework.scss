@@ -9,6 +9,7 @@ $red: #ff0000;
 $dark-red: #750a0a;
 $header-red: #A82727;
 $border-color: #cdcdcd;
+$border-av-block-color: #474747;
 $_grey: #1C1C1C;
 $text-grey: #555555;
 $text-l-grey: #918f8f;
@@ -66,6 +67,88 @@ $small: 10px;
   }
 }
 
+// Хлебные крошки
+@mixin breadcrumbs($bg-color, $arrowThick: 2px, $blockHeight: 40px, $startZindex: 10) {
+  position: relative;
+  margin: 0;
+  padding: 7px;
+
+  .bc-block {
+    position: relative;
+    float: left;
+    height: $blockHeight;
+    border: $arrowThick solid $border-av-block-color;
+    background-color: $av-content-bg;
+    margin-right: $arrowThick + 8px;
+    padding-left: $blockHeight/2 + $arrowThick  + 5px;
+    @include opacity(0.6);
+    color: white;
+
+    .link {
+      line-height: $blockHeight;
+    }
+
+    &.active {
+      background-color: $dark-red;
+      @include opacity(1);
+
+      .right-strelka-bg {
+        border-left-color: $dark-red;
+      }
+    }
+  }
+
+  a {
+    &:first-child {
+      .left-strelka, .left-strelka-bg {display: none;}
+      .bc-block {padding-left: 5px;}
+    }
+
+    &:hover {
+      .bc-block {@include opacity(1);}
+    }
+  }
+
+  // Костыль (!DELETE!), который накладывает стрелки друг на друга.
+  // Не больше 10 breadcrumbs - хватитЮ иначе плохо для seo1
+  .bc-block-1 {z-index: $startZindex;}
+  .bc-block-2 {z-index: $startZindex - 1;}
+  .bc-block-3 {z-index: $startZindex - 2;}
+  .bc-block-4 {z-index: $startZindex - 3;}
+  .bc-block-5 {z-index: $startZindex - 4;}
+  .bc-block-6 {z-index: $startZindex - 5;}
+  .bc-block-7 {z-index: $startZindex - 6;}
+  .bc-block-8 {z-index: $startZindex - 7;}
+  .bc-block-9 {z-index: $startZindex - 8;}
+  .bc-block-10 {z-index: $startZindex - 9;}
+
+  .left-strelka, .right-strelka {
+    position: absolute;
+    top: -$arrowThick;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent transparent $border-av-block-color;
+    border-style: solid;
+    border-width: $blockHeight/2 + $arrowThick;
+    z-index: $startZindex;
+  }
+  .left-strelka {left: 0;}
+  .right-strelka {right: -($blockHeight + 3*$arrowThick);}
+
+  .left-strelka-bg, .right-strelka-bg {
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent transparent $bg-color;
+    border-style: solid;
+    border-width: $blockHeight/2;
+    z-index: $startZindex + 1;
+  }
+  .right-strelka-bg {right: -$blockHeight;}
+  .left-strelka-bg {left: -$arrowThick; border-left-color: $av-block-bg;}
+}
+
 /* Основные элементы
 *********************************************************************************/
 .info {@include info;}
@@ -104,12 +187,29 @@ a {color: white;}
     }
   }
 
-  .av-content, .av-header {
+  .av-content, .av-header, .av-preview {
     border: 1px solid #474747;
     border-radius: 5px;
     padding: 7px;
     margin: 0 0 8px;
     background-color: $av-content-bg;
+  }
+
+  .av-preview {
+    padding-top: 0;
+    padding: {left: 0; right: 0};
+
+    .header {
+      background-image: none;
+      padding: 7px;
+      border-bottom: 1px solid #474747;
+      color: $header-red;
+    }
+
+    .av-content {
+      padding: 7px;
+      border: none;
+    }
   }
 }
 

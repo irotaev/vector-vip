@@ -336,7 +336,7 @@ $(document).ready(function() {
     // Включаю плагин для скроллинга контента
     $(".scrolling-block").mCustomScrollbar(
         {
-            set_height: $(window).height() - 100,
+            set_height: $(window).height() - 80,
             scrollButtons:{
                 enable:true
             },

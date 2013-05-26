@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <title></title>
+    <!--[if IE]><link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" /><![endif]-->
+    <title>Статический макет сайта | главная</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css" media="screen, projection" />
     <!--[if gte IE 9]><link rel="stylesheet" href="css/styleIE9.css" type="text/css" media="screen, projection" /><![endif]-->
 
@@ -42,16 +43,19 @@
                 <nav id="left-menu" class="left-menu-block">
                     <ul class="mainMenu">
                         <li class="info">
-                            <a href="#">Главная</a>
+                            <a href="/">Главная</a>
                         </li>
                         <li class="info">
-                            <a href="#">О компаниии</a>
+                            <a href="/about-company.html">О компаниии</a>
                         </li>
                         <li class="info">
-                        <a href="#">Сотрудничество</a>
+                        <a href="/sotrudnichestvo.html">Сотрудничество</a>
                         </li>
                         <li class="info">
                         <a href="#">Наши работы</a>
+                        </li>
+                        <li class="info">
+                            <a href="/novosti.html">Новости</a>
                         </li>
                         <!--<li class="info">-->
                         <!--<a href="#">Прайс-лист</a>-->
@@ -81,7 +85,7 @@
                 </nav><!-- #left-menu-->
             </div>
 
-            <div id="header-logo"></div>
+            <a href="/"><div id="header-logo"></div></a>
 
             <div id="header-telephone"></div>
 
@@ -116,112 +120,118 @@
     <section id="middle">
         <div id="middle-scrolling-section">
             <div class="scrolling-block">
-                <div id="container">
-                    <div id="content">
-                        <div id="main-img-wrapper"></div>
+                <header class="h1-header av-block">
+                    <div class="av-header"><h1>Главная страница строительной компании vector-vip</h1></div>
+                </header>
 
-                        <div id="main-search" class="av-block">
-                            <div class="av-content">
-                                <form name="mainSearch">
-                                    <input type="text" class="search" placeholder="Введите слова для поиска" />
-                                    <input type="submit" class="search-btn" value=""/>
-                                </form>
-                            </div>
-                        </div><!-- #main-search-->
+                <div class="content-for-edit">
+                    <div id="container">
+                        <div id="content">
+                            <div id="main-img-wrapper"></div>
 
-                        <section id="changebleContent" class="p_content">
-                            <article id="home-article" class="av-block ">
-                                <header class="av-header"><span>О компании</span></header>
-
+                            <div id="main-search" class="av-block">
                                 <div class="av-content">
-                                Анализируя поисковый запрос «МАГАЗИН автозапчастей в Москве» в Яндексе и других поисковых системах мы заметили, что в первой десятке находятся не столько магазины по продаже автозапчастей, аккумуляторов, автомобильных аксессуаров, автомасел, автохимии, автоинструмента, автошин, колесных дисков, сколько информационные площадки, которые дают Вам информацию об автомагазинах в Москве и других городах России, причем не всегда полную и правдивую.
-                                Нам немножко стало обидно, и мы решили сделать все, чтобы наш интернет автомагазин запчастей попал на первую страницу поисковых систем не только в Москве, но и в России. Может быть, мы преследуем очень амбициозные цели, но нам очень хочется, потому, что мы осуществляем продажу автозапчастей, аккумуляторов, автомобильных аксессуаров, автомасел, автохимии, автоинструмента, автошин, колесных дисков от производителя.  Новый online проект КОМПАНИИ «ТЕХИНКОМ АВТОЗАПЧАСТЬ» ставит своей задачей продажу автозапчастей с минимальными усилиями для покупателя, а также предоставление потенциальным клиентам информации, необходимой для успешного выбора той или иной запасной части в режиме онлайн.
-                                Очень хочется, что бы данный проект стал хорошим подспорьем руководителям предприятий, начальникам отделов МТС работающим и строящим свой бизнес в автомобильной отрасли, для людей эксплуатирующих автомобильную технику, осуществляющих ремонт и обслуживание автомобильной техники.
+                                    <form name="mainSearch">
+                                        <input type="text" class="search" placeholder="Введите слова для поиска" />
+                                        <input type="submit" class="search-btn" value=""/>
+                                    </form>
                                 </div>
-                            </article>
+                            </div><!-- #main-search-->
 
-                            <div id="home-gallery-preview" class="av-block">
-                                <header class="av-header"><span>Наши работы</span></header>
-
-                                <div class="av-content">
-                                    <table class="gallery">
-                                        <tr>
-                                            <td><div>
-                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 1" rel="group1">
-                                                    <img src="img/content/home-gallery-img.png" alt=""/>
-                                                </a></div></td>
-                                            <td><div>
-                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 2" rel="group1">
-                                                    <img src="img/content/home-gallery-img.png" alt=""/>
-                                                </a></div></td>
-                                            <td><div>
-                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 3" rel="group1">
-                                                    <img src="img/content/home-gallery-img.png" alt=""/>
-                                                </a></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td><div>
-                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 4" rel="group2">
-                                                    <img src="img/content/home-gallery-img.png" alt=""/>
-                                                </a></div></td>
-                                            <td><div>
-                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 5" rel="group2">
-                                                    <img src="img/content/home-gallery-img.png" alt=""/>
-                                                </a></div></td>
-                                            <td><div>
-                                                <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 6" rel="group2">
-                                                    <img src="img/content/home-gallery-img.png" alt=""/>
-                                                </a></div></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </section><!-- #changebleContent-->
-                    </div><!-- #content-->
-                </div><!-- #container-->
-
-                <aside id="sideLeft">
-                    <div class="scroll-down"></div>
-                    <div class="scroll-top"></div>
-                    <div class="menu-open-btn"></div>
-
-                    <div class="content">
-                        <div id="side-left-additional-content">
-                            <div class="inner-wrapper">
-                                <section id="aside-news" class="av-block">
-                                    <header class="av-header"><span>Новости</span></header>
+                            <section id="changebleContent" class="p_content">
+                                <article id="home-article" class="av-block ">
+                                    <header class="av-header"><span>О компании</span></header>
 
                                     <div class="av-content">
-                                        <article class="news-block">
-                                            <header>22.10.2012</header>
-
-                                            <div class="content">
-                                                <a href="">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>
-                                                Российские дилеры ГАЗ начали продажи новых модификаций автомобилей
-                                            </div>
-                                        </article>
-                                        <article class="news-block">
-                                            <header>22.10.2012</header>
-
-                                            <div class="content">
-                                                <a href="">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>
-                                                Российские дилеры ГАЗ начали продажи новых модификаций автомобилей
-                                            </div>
-                                        </article>
-                                        <!--<article class="news-block">-->
-                                            <!--<header>22.10.2012</header>-->
-
-                                            <!--<div class="content">-->
-                                                <!--<a href="">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>-->
-                                                <!--Российские дилеры ГАЗ начали продажи новых модификаций автомобилей-->
-                                            <!--</div>-->
-                                        <!--</article>-->
+                                    Анализируя поисковый запрос «МАГАЗИН автозапчастей в Москве» в Яндексе и других поисковых системах мы заметили, что в первой десятке находятся не столько магазины по продаже автозапчастей, аккумуляторов, автомобильных аксессуаров, автомасел, автохимии, автоинструмента, автошин, колесных дисков, сколько информационные площадки, которые дают Вам информацию об автомагазинах в Москве и других городах России, причем не всегда полную и правдивую.
+                                    Нам немножко стало обидно, и мы решили сделать все, чтобы наш интернет автомагазин запчастей попал на первую страницу поисковых систем не только в Москве, но и в России. Может быть, мы преследуем очень амбициозные цели, но нам очень хочется, потому, что мы осуществляем продажу автозапчастей, аккумуляторов, автомобильных аксессуаров, автомасел, автохимии, автоинструмента, автошин, колесных дисков от производителя.  Новый online проект КОМПАНИИ «ТЕХИНКОМ АВТОЗАПЧАСТЬ» ставит своей задачей продажу автозапчастей с минимальными усилиями для покупателя, а также предоставление потенциальным клиентам информации, необходимой для успешного выбора той или иной запасной части в режиме онлайн.
+                                    Очень хочется, что бы данный проект стал хорошим подспорьем руководителям предприятий, начальникам отделов МТС работающим и строящим свой бизнес в автомобильной отрасли, для людей эксплуатирующих автомобильную технику, осуществляющих ремонт и обслуживание автомобильной техники.
                                     </div>
-                                </section><!-- #aside-news-->
+                                </article>
+
+                                <div id="home-gallery-preview" class="av-block">
+                                    <header class="av-header"><span>Наши работы</span></header>
+
+                                    <div class="av-content">
+                                        <table class="gallery">
+                                            <tr>
+                                                <td><div>
+                                                    <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 1" rel="group1">
+                                                        <img src="img/content/home-gallery-img.png" alt=""/>
+                                                    </a></div></td>
+                                                <td><div>
+                                                    <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 2" rel="group1">
+                                                        <img src="img/content/home-gallery-img.png" alt=""/>
+                                                    </a></div></td>
+                                                <td><div>
+                                                    <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 3" rel="group1">
+                                                        <img src="img/content/home-gallery-img.png" alt=""/>
+                                                    </a></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div>
+                                                    <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 4" rel="group2">
+                                                        <img src="img/content/home-gallery-img.png" alt=""/>
+                                                    </a></div></td>
+                                                <td><div>
+                                                    <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 5" rel="group2">
+                                                        <img src="img/content/home-gallery-img.png" alt=""/>
+                                                    </a></div></td>
+                                                <td><div>
+                                                    <a class="fancybox" href="img/content/home-gallery-img.png" title="пример строительных работ 6" rel="group2">
+                                                        <img src="img/content/home-gallery-img.png" alt=""/>
+                                                    </a></div></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section><!-- #changebleContent-->
+                        </div><!-- #content-->
+                    </div><!-- #container-->
+
+                    <aside id="sideLeft">
+                        <div class="scroll-down"></div>
+                        <div class="scroll-top"></div>
+                        <div class="menu-open-btn"></div>
+
+                        <div class="content">
+                            <div id="side-left-additional-content">
+                                <div class="inner-wrapper">
+                                    <section id="aside-news" class="av-block">
+                                        <header class="av-header"><span>Новости</span></header>
+
+                                        <div class="av-content">
+                                            <article class="news-block">
+                                                <header>22.10.2012</header>
+
+                                                <div class="content">
+                                                    <a href="">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>
+                                                    Российские дилеры ГАЗ начали продажи новых модификаций автомобилей
+                                                </div>
+                                            </article>
+                                            <article class="news-block">
+                                                <header>22.10.2012</header>
+
+                                                <div class="content">
+                                                    <a href="">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>
+                                                    Российские дилеры ГАЗ начали продажи новых модификаций автомобилей
+                                                </div>
+                                            </article>
+                                            <!--<article class="news-block">-->
+                                                <!--<header>22.10.2012</header>-->
+
+                                                <!--<div class="content">-->
+                                                    <!--<a href="">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>-->
+                                                    <!--Российские дилеры ГАЗ начали продажи новых модификаций автомобилей-->
+                                                <!--</div>-->
+                                            <!--</article>-->
+                                        </div>
+                                    </section><!-- #aside-news-->
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </aside><!-- #sideLeft -->
+                    </aside><!-- #sideLeft -->
+                </div><!--.content (формирует контент с отступами)-->
 
                 <div class="height-clear"></div>
             </div><!--.scrolling-block-->

@@ -1,3 +1,48 @@
+// Относится к middle section
+#middle {
+  background: url(../img/content/middle-scrolling-section/mss-bg.png) left top repeat;
+
+  .breadcrumbs {
+    @include breadcrumbs($av-content-bg);
+  }
+
+  .h1-header {
+
+    &.av-block {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .av-header {
+      width: 760px;
+      margin: 0 0 8px 0;
+      padding: 0;
+      height: 25px;
+      @include border-radius(0 0 10px 10px);
+      background-image: none;
+      border-color: #676767;
+
+      h1 {
+        margin-left: 15px;
+        line-height: 25px;
+        color: $av-content-bg;
+        font-weight: bold;
+        font-size: 20px;
+        $__P: $header-red;
+        @include text-shadow(-1px 0 $__P, 0 1px $__P, 1px 0 $__P, 0 -1px $__P);
+      }
+    }
+  }
+
+  .content-for-edit {
+    padding: 0 14px 14px 14px;
+  }
+
+  .scrolling-block {position: relative;}
+}
+
+// Для каждого изменяемого контейнера
 #container {
   position: relative;
   $ID-container-width: 740px;
@@ -15,7 +60,7 @@
   }
 
   #main-search {
-    margin: {right: 10px; top: 10px};
+    margin: {top: 10px};
 
     .search {
       width: 546px;
@@ -44,7 +89,7 @@
 
   #changebleContent {
     position: relative;
-    padding: 0 10px 10px 0;
+    padding: 0 0 10px 0;
     z-index: 10;
     //height: 600px;
     overflow: hidden;
@@ -102,9 +147,6 @@
 
 
 // Специально для секций контента
-#middle-scrolling-section {
-  background: url(../img/content/middle-scrolling-section/mss-bg.png) left top repeat;
-}
 #main-border-left, #main-border-right {
   height: 100%;
   width: 13px;
