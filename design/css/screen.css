@@ -724,12 +724,12 @@ input[type="text"]:focus, input[type="password"]:focus {
   font-size: 12px;
 }
 /* line 102, e:/ApacheVirtualHosts/www.vector-vip.ru/GitClone/vector-vip/design/scss/_mainContainer.scss */
-#container #changebleContent #home-gallery-preview table {
+#container #changebleContent #home-gallery-preview table, #container #changebleContent .photo-gallery table {
   width: 100%;
   height: 242px;
 }
 /* line 106, e:/ApacheVirtualHosts/www.vector-vip.ru/GitClone/vector-vip/design/scss/_mainContainer.scss */
-#container #changebleContent #home-gallery-preview table td {
+#container #changebleContent #home-gallery-preview table td, #container #changebleContent .photo-gallery table td {
   vertical-align: middle;
   text-align: center;
   border-bottom: 10px solid transparent;
@@ -737,7 +737,7 @@ input[type="text"]:focus, input[type="password"]:focus {
   border-left: 14px solid transparent;
 }
 /* line 113, e:/ApacheVirtualHosts/www.vector-vip.ru/GitClone/vector-vip/design/scss/_mainContainer.scss */
-#container #changebleContent #home-gallery-preview table td div {
+#container #changebleContent #home-gallery-preview table td div, #container #changebleContent .photo-gallery table td div {
   padding: 1px;
   border: 2px dotted red;
   width: 210px;
@@ -747,26 +747,26 @@ input[type="text"]:focus, input[type="password"]:focus {
   -o-transition: all 0.5s ease;
 }
 /* line 122, e:/ApacheVirtualHosts/www.vector-vip.ru/GitClone/vector-vip/design/scss/_mainContainer.scss */
-#container #changebleContent #home-gallery-preview table td div:hover {
+#container #changebleContent #home-gallery-preview table td div:hover, #container #changebleContent .photo-gallery table td div:hover {
   /*свечение*/
   -webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
 }
 /* line 132, e:/ApacheVirtualHosts/www.vector-vip.ru/GitClone/vector-vip/design/scss/_mainContainer.scss */
-#container #changebleContent #home-gallery-preview table tr td:first-child {
+#container #changebleContent #home-gallery-preview table tr td:first-child, #container #changebleContent .photo-gallery table tr td:first-child {
   border-left-width: 0;
 }
 /* line 136, e:/ApacheVirtualHosts/www.vector-vip.ru/GitClone/vector-vip/design/scss/_mainContainer.scss */
-#container #changebleContent #home-gallery-preview table tr:first-child td {
+#container #changebleContent #home-gallery-preview table tr:first-child td, #container #changebleContent .photo-gallery table tr:first-child td {
   border-top: 0;
 }
 /* line 137, e:/ApacheVirtualHosts/www.vector-vip.ru/GitClone/vector-vip/design/scss/_mainContainer.scss */
-#container #changebleContent #home-gallery-preview table tr:last-child td {
+#container #changebleContent #home-gallery-preview table tr:last-child td, #container #changebleContent .photo-gallery table tr:last-child td {
   border-bottom: 0;
 }
 /* line 140, e:/ApacheVirtualHosts/www.vector-vip.ru/GitClone/vector-vip/design/scss/_mainContainer.scss */
-#container #changebleContent #home-gallery-preview table img {
+#container #changebleContent #home-gallery-preview table img, #container #changebleContent .photo-gallery table img {
   width: 206px;
 }
 
