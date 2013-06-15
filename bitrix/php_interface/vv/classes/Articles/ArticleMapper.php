@@ -20,10 +20,24 @@ class VV_Articles_ArticleMapper
         return $result;
     }
     
-    public function getByIblockID($iblockID, $params = array())
+    public function getByIblockID($iblockID, $params = array(), $sectionID = null)
     {
         $result = array();
+        
+        $filter = array('IBLOCK_ID' => $iblockID);
+        $sectionFilter = isset($sectionID) ? array("SECTION_ID" => $sectionID) : array();
+        array_push($filter, $sectionFilter);
+        
         foreach($this->_db->fetch(array('IBLOCK_ID' => $iblockID), $params) as $row) { 
+            $result[$row['ID']] = $this->_map($row);
+        }
+        return $result;
+    }
+    
+    public function getByIblockSection($iblockID, $params = array())
+    {
+        $result = array();
+        foreach($this->_db->fetch(array('IBLOCK_ID' => 3, "SECTION_ID" => $iblockID), $params) as $row) { 
             $result[$row['ID']] = $this->_map($row);
         }
         return $result;
@@ -35,14 +49,19 @@ class VV_Articles_ArticleMapper
     }
 
     protected function _map($row = array())
-    {
+    {  
         if (empty($row)) {
             return new VV_Articles_Article;
         }
         return new VV_Articles_Article(array(
             'id' => $row['ID'],
             'name' => $row['NAME'],
-            'detailText' => $row['DETAIL_TEXT']
+            'detailText' => $row['DETAIL_TEXT'],
+            'dateActiveFrom' => $row["DATE_ACTIVE_FROM"],
+            'previewText'       => $row["PREVIEW_TEXT"],
+            'code'                 =>  $row["CODE"],
+            'photoGalleryID'  => $row['PROPERTY_PHOTOGALLERY_VALUE'],
+            'previewImgID'        => $row["PREVIEW_PICTURE"]
         ));
     }
 

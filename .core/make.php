@@ -5,7 +5,7 @@ $projectDir = realpath(__DIR__ . '/../');
 if (!file_exists($projectDir.'/design/css')) {
     mkdir($projectDir.'/design/css');
 }
-exec('sass -f '.$projectDir.'/design/scss/style.scss '.$projectDir.'/design/css/style.css');
+exec('sass -f '.$projectDir.'/design/scss/screen.scss '.$projectDir.'/design/css/screen.css');
 //exec('sass -f '.$projectDir.'/design/sass/print.scss '.$projectDir.'/design/css/print.css');
 
 $dir = $projectDir.'/design/js/make';

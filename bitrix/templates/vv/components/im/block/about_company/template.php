@@ -1,14 +1,34 @@
 <?
-$APPLICATION->SetTitle("О компании | строительная компания  vector-vip");
-$APPLICATION->SetPageProperty("description",  'Информация о компании  vector-vip');
-$APPLICATION->SetPageProperty("keywords", 'о компании');
-?>
+$APPLICATION->SetTitle("Информация о компании vector-vip");
+$APPLICATION->SetPageProperty("description",  'Информация о компании vector-vip');
+$APPLICATION->SetPageProperty("keywords", 'ремонт квартир в москве отделка квартир строительная компания');
+?>  
 
 <div class="scrolling-block">
+            <header class="h1-header av-block">
+                <div class="av-header"><h1>О компании vector-vip</h1></div>
+            </header><!--.h1-header (главный H1)-->
+
+            <div class="content-for-edit">
+                <div class="breadcrumbs av-block">
+                    <a href="/">
+                        <div class="bc-block bc-block-1">
+                            <div class="group-strelka"><div class="left-strelka-bg"></div><div class="left-strelka"></div></div>
+                                <span class="link">Главная</span>
+                            <div class="group-strelka"><div class="right-strelka-bg"></div><div class="right-strelka"></div></div>
+                        </div>
+                    </a>
+                        <div class="bc-block bc-block-2 active">
+                            <div class="group-strelka"><div class="left-strelka-bg"></div><div class="left-strelka"></div></div>
+                            <span class="link">О компании</span>
+                            <div class="group-strelka"><div class="right-strelka-bg"></div><div class="right-strelka"></div></div>
+                        </div>
+
+                    <div class="height-clear"></div>
+                </div><!--breadcrumbs-->
+
                 <div id="container">
                     <div id="content">
-                        <div id="main-img-wrapper"></div>
-
                         <div id="main-search" class="av-block">
                             <div class="av-content">
                                 <form name="mainSearch">
@@ -20,11 +40,13 @@ $APPLICATION->SetPageProperty("keywords", 'о компании');
 
                         <section id="changebleContent" class="p_content">
                             <article id="home-article" class="av-block ">
-                                <header class="av-header"><span>О компании</span></header>                                 
+                                <header class="av-header"><span>О компании</span></header>
+
                                 <div class="av-content">
-                                    <?="О компании 2"?>
+                                        <?=$arResult['abouCompany']->detailText?>
                                 </div>
-                            </article>                            
+                            </article>
+
                         </section><!-- #changebleContent-->
                     </div><!-- #content-->
                 </div><!-- #container-->
@@ -37,40 +59,12 @@ $APPLICATION->SetPageProperty("keywords", 'о компании');
                     <div class="content">
                         <div id="side-left-additional-content">
                             <div class="inner-wrapper">
-                                <section id="aside-news" class="av-block">
-                                    <header class="av-header"><span>Новости</span></header>
-
-                                    <div class="av-content">
-                                        <article class="news-block">
-                                            <header>22.10.2012</header>
-
-                                            <div class="content">
-                                                <a rel=”nofollow” href="#">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>
-                                                Российские дилеры ГАЗ начали продажи новых модификаций автомобилей
-                                            </div>
-                                        </article>
-                                        <article class="news-block">
-                                            <header>22.10.2012</header>
-
-                                            <div class="content">
-                                                <a rel=”nofollow” href="#">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>
-                                                Российские дилеры ГАЗ начали продажи новых модификаций автомобилей
-                                            </div>
-                                        </article>
-                                        <!--<article class="news-block">-->
-                                            <!--<header>22.10.2012</header>-->
-
-                                            <!--<div class="content">-->
-                                                <!--<a href="">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>-->
-                                                <!--Российские дилеры ГАЗ начали продажи новых модификаций автомобилей-->
-                                            <!--</div>-->
-                                        <!--</article>-->
-                                    </div>
-                                </section><!-- #aside-news-->
+                                <?$APPLICATION->IncludeComponent('im:block', 'news', array("template" => "aside_news"))?>
                             </div>
                         </div>
                     </div>
                 </aside><!-- #sideLeft -->
+            </div><!--.content (формирует контент с отступами)-->
 
-                <div class="height-clear"></div>
-            </div><!--.scrolling-block-->
+            <div class="height-clear"></div>
+        </div><!--.scrolling-block-->

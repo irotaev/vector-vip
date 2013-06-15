@@ -1,6 +1,6 @@
 <?php
 $config = array(
-    'articles'  => 1,
+    'articles'  => 1,    
     'gallery'   => 240,
     'authors'   => 30,
     'archive'   => 55,

@@ -6,7 +6,7 @@
     <?$APPLICATION->ShowHead();?>
     <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <title><?$APPLICATION->ShowTitle();?></title>   
-    <link rel="stylesheet" href="/design/css/style.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/design/css/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="/design/css/jquery.mCustomScrollbar.css" type="text/css" media="screen, projection" />
     <!--[if gte IE 9]><link rel="stylesheet" href="/design/css/styleIE9.css" type="text/css" media="screen, projection" /><![endif]-->
 
@@ -19,7 +19,14 @@
     <!-- Подключение подсказок -->
     <link rel="stylesheet" href="/design/css/tip-darkgray/tip-darkgray.css" type="text/css" media="screen, projection" />
     <script type="text/javascript" src="/design/js/jquery.poshytip.min.js"></script>
-    <!-- /// Подключение подсказок -->   
+    <!-- /// Подключение подсказок -->  
+    
+    <!--Плагин фотогалереи и сопутствующие библиотеки-->
+    <script type="text/javascript" src="/design/js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="/design/js/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="/design/css/fancybox/jquery.fancybox.css" type="text/css" media="screen, projection" />
+    <!-- /// Плагин фотогалереи и сопутствующие библиотеки-->
+    
     <!--Скрипт для bitrix-->
     <script type="text/javascript" src="/design/js/bitrix.js"></script>
     <!--//Скрипт для bitrix-->
@@ -29,7 +36,7 @@
 <!-- /// Подключение сборочных скриптов-->
 </head>
 
-<body>
+<body> 
     
 <!--Панель bitrix-->
 <div id="bitrix-panel-controll">
@@ -40,7 +47,9 @@
 </div>
 <!-- /// Панель bitrix-->
 
-<div id="wrapper">
+    <div id="wrapper">
+    <div id="main-border-left"></div>
+    <div id="main-border-right"></div>
 
     <header id="header">
         <div class="wrapper">
@@ -51,49 +60,25 @@
                 <nav id="left-menu" class="left-menu-block">
                     <ul class="mainMenu">
                         <li class="info">
-                            <a href="/about-company/">О компании</a>                            
+                            <a href="/">Главная</a>
                         </li>
                         <li class="info">
-                            <a href="#">Сотрудничество</a>                            
+                            <a href="/about-company/">О компаниии</a>
+                        </li>
+<!--                        <li class="info">
+                        <a href="/sotrudnichestvo.html">Сотрудничество</a>
+                        </li>-->
+                        <li class="info">
+                        <a href="/nashi-raboti/">Наши работы</a>
                         </li>
                         <li class="info">
-                            <a href="#">Контакты</a>                            
+                            <a href="/news/">Новости</a>
                         </li>
-                        <li class="info">
-                        <a href="#">Галерея работ</a>                        
-                        </li>
-                        <li class="info">
-                        <a href="#">Цены</a>                        
-                        </li>
-                        <!--<li class="info">-->
-                        <!--<a href="#">Прайс-лист</a>-->
-                        <!--<div class="submenu">-->
-                        <!--<ul class="submenu-wrapper">-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 1</a></li>-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 2</a></li>-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 3</a></li>-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 4</a></li>-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 5</a></li>-->
-                        <!--</ul>-->
-                        <!--</div>-->
-                        <!--</li>-->
-                        <!--<li class="info">-->
-                        <!--<a href="#">Контакты</a>-->
-                        <!--<div class="submenu">-->
-                        <!--<ul class="submenu-wrapper">-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 1</a></li>-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 2</a></li>-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 3</a></li>-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 4</a></li>-->
-                        <!--<li><div class="strelka"></div><a href="#">Подпункт 5</a></li>-->
-                        <!--</ul>-->
-                        <!--</div>-->
-                        <!--</li>-->
                     </ul>
                 </nav><!-- #left-menu-->
-            </div>
+            </div>    
 
-            <a href="/"><img  id="header-logo" src="/design/img/header/vvip-logo.png" alt="строительная компания vector-vip" /></a>
+            <a href="/"><img  id="header-logo" src="<?=$pfx["design"]?>img/header/vvip-logo.png" alt="строительная компания vector-vip" /></a>
 
             <div id="header-telephone"></div>
 
@@ -111,11 +96,11 @@
                     <td colspan="2"><input type="password" id="password-box-header" placeholder="Введите пароль"/></td>
                 </tr>
                 <tr>
-                    <td><input type="image" src="/design/img/header/login-input.png" alt="Войти"/></td>
+                    <td><input type="image" src="<?=$pfx["design"]?>img/header/login-input.png" alt="Войти"/></td>
                     <td class="info fogot-reg-text">
                         <span>
-                            <a rel=”nofollow” class="reg-text" href="#">Регистрация</a>
-                            <br/><a rel=”nofollow” href="#">Забыли пароль?</a>
+                            <a class="reg-text" href="#">Регистрация</a>
+                            <br/><a href="#">Забыли пароль?</a>
                         </span>
                     </td>
                 </tr>

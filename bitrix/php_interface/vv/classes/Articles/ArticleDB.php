@@ -9,9 +9,10 @@ class VV_Articles_ArticleDB
     protected $_cacheDir = '';
 
     protected $_commonSelect = array(
-        'ID', 'CODE', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT', 'DETAIL_TEXT',
+        'ID', 'CODE', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PROPERTY_PHOTOGALLERY',
+        'PREVIEW_PICTURE',
         'PROPERTY_KEYWORDS', 'PROPERTY_DESCRIPTION', 'PROPERTY_CANONICAL',
-        'PROPERTY_GOOGLEADWORDS', 'PROPERTY_INDEX_FOLLOW', 
+        'PROPERTY_GOOGLEADWORDS', 'PROPERTY_INDEX_FOLLOW', "DATE_ACTIVE_FROM" 
     );
 
 
@@ -76,7 +77,7 @@ class VV_Articles_ArticleDB
 
         $filter['IBLOCK_ID'] = isset($filter['IBLOCK_ID']) ? $filter['IBLOCK_ID'] : $this->_iblockId;
         $filter['ACTIVE'] = 'Y';
-
+        
         $this->_dbResult = CIBlockElement::getList(
             $params['sort'],
             $filter,

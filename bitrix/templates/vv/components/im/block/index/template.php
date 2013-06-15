@@ -2,94 +2,76 @@
 $APPLICATION->SetTitle("ремонт и отделка квартир в Москве | строительная компания  vector-vip");
 $APPLICATION->SetPageProperty("description",  'Строительная компания  vector-vip - ремонт и отделка квартир в Москве');
 $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в москве отделка квартир');
-?>
+?>  
 
 <div class="scrolling-block">
-                <div id="container">
-                    <div id="content">
-                        <div id="main-img-wrapper"></div>
+    <header class="h1-header av-block">
+        <div class="av-header"><h1>Главная страница строительной компании vector-vip</h1></div>
+    </header>
 
-                        <div id="main-search" class="av-block">
-                            <div class="av-content">
-                                <form name="mainSearch">
-                                    <input type="text" class="search" placeholder="Введите слова для поиска" />
-                                    <input type="submit" class="search-btn" value=""/>
-                                </form>
-                            </div>
-                        </div><!-- #main-search-->
+    <div class="content-for-edit">
+        <div id="container">
+            <div id="content">
+                <div id="main-img-wrapper"></div>
 
-                        <section id="changebleContent" class="p_content">
-                            <article id="home-article" class="av-block ">
-                                <header class="av-header"><span>О компании</span></header>                                 
-                                <div class="av-content">
-                                    <?=$arResult['article']->detailText?>
-                                </div>
-                            </article>
+                <div id="main-search" class="av-block">
+                    <div class="av-content">
+                        <form name="mainSearch">
+                            <input type="text" class="search" placeholder="Введите слова для поиска" />
+                            <input type="submit" class="search-btn" value=""/>
+                        </form>
+                    </div>
+                </div><!-- #main-search-->
 
-                            <div id="home-gallery-preview" class="av-block">
-                                <header class="av-header"><span>Наши работы</span></header>
+                <section id="changebleContent" class="p_content">
+                    <article id="home-article" class="av-block ">
+                        <header class="av-header"><span>О компании</span></header>
 
-                                <div class="av-content">
-                                    <table class="gallery">
-                                        <tr>
-                                            <td><div><a rel=”nofollow” href="#" title='пример строительных работ 1'><img src="design/img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                            <td><div><a rel=”nofollow” href="#" title='пример строительных работ 2'><img src="design/img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                            <td><div><a rel=”nofollow” href="#" title='пример строительных работ 3'><img src="design/img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td><div><a rel=”nofollow” href="#" title='пример строительных работ 4'><img src="design/img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                            <td><div><a rel=”nofollow” href="#" title='пример строительных работ 5'><img src="design/img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                            <td><div><a rel=”nofollow” href="#" title='пример строительных работ 6'><img src="design/img/content/home-gallery-img.png" alt=""/></a></div></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </section><!-- #changebleContent-->
-                    </div><!-- #content-->
-                </div><!-- #container-->
+                        <div class="av-content">
+                            <?=$arResult['article']->detailText?>
+                        </div>
+                    </article>
 
-                <aside id="sideLeft">
-                    <div class="scroll-down"></div>
-                    <div class="scroll-top"></div>
-                    <div class="menu-open-btn"></div>
+                    <div id="home-gallery-preview" class="av-block">
+                        <header class="av-header"><span>Наши работы : <?=$arResult["ourWorksArticle"]->name?></span></header>
 
-                    <div class="content">
-                        <div id="side-left-additional-content">
-                            <div class="inner-wrapper">
-                                <section id="aside-news" class="av-block">
-                                    <header class="av-header"><span>Новости</span></header>
+                        <div class="av-content photo-gallery">
+                                    <?$counter = 1;?>
+                                    <?  foreach ($arResult["ourWorksArticle"]->imageGallery as $image):?>
+                                    <?if ($counter == 1 || $counter  % 3 == 0):?>
+                                    <!--<tr>-->
+                                    <?endif;?>
+                                    <div class="gallery-item">     
+                                        <a class="fancybox" href="<?=$image->url?>" title="<?=$arResult["ourWorksArticle"]->name?>" rel="group1"> 
+                                            <img src="<?=$image->crop(206, 140)->url?>" alt=""/>
+                                        </a></div>
+                                    <?$counter ++;?>    
+                                    <?if ($counter == 1 || $counter  % 3 == 0):?>
+                                    <!--</tr>-->
+                                    <?endif;?>
+                                    <?  endforeach;?>   
 
-                                    <div class="av-content">
-                                        <article class="news-block">
-                                            <header>22.10.2012</header>
-
-                                            <div class="content">
-                                                <a rel=”nofollow” href="#">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>
-                                                Российские дилеры ГАЗ начали продажи новых модификаций автомобилей
-                                            </div>
-                                        </article>
-                                        <article class="news-block">
-                                            <header>22.10.2012</header>
-
-                                            <div class="content">
-                                                <a rel=”nofollow” href="#">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>
-                                                Российские дилеры ГАЗ начали продажи новых модификаций автомобилей
-                                            </div>
-                                        </article>
-                                        <!--<article class="news-block">-->
-                                            <!--<header>22.10.2012</header>-->
-
-                                            <!--<div class="content">-->
-                                                <!--<a href="">Группа ГАЗ начала продажи автомобилей ГАЗель Бизнес с ГБО</a> <br/>-->
-                                                <!--Российские дилеры ГАЗ начали продажи новых модификаций автомобилей-->
-                                            <!--</div>-->
-                                        <!--</article>-->
-                                    </div>
-                                </section><!-- #aside-news-->
-                            </div>
+                                    <div class="clear-both"></div>
                         </div>
                     </div>
-                </aside><!-- #sideLeft -->
+                </section><!-- #changebleContent-->
+            </div><!-- #content-->
+        </div><!-- #container-->
 
-                <div class="height-clear"></div>
-            </div><!--.scrolling-block-->
+        <aside id="sideLeft">
+            <div class="scroll-down"></div>
+            <div class="scroll-top"></div>
+            <div class="menu-open-btn"></div>
+
+            <div class="content">
+                <div id="side-left-additional-content">
+                    <div class="inner-wrapper">
+                        <?$APPLICATION->IncludeComponent('im:block', 'news', array("template" => "aside_news"))?>                        
+                    </div>
+                </div>
+            </div>
+        </aside><!-- #sideLeft -->
+    </div><!--.content (формирует контент с отступами)-->
+
+    <div class="height-clear"></div>
+    </div><!--.scrolling-block-->
