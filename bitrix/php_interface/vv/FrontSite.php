@@ -208,12 +208,33 @@ class FrontSite
     {
         if (class_exists($classname) || interface_exists($classname)) {
             return;
+        }                                
+        
+        // Поддержка namespace
+        if (strstr($classname, "\\"))
+        {
+            $dirs = explode('\\', $classname);            
+            $prefix = count($dirs) > 1 ? array_shift($dirs) : '';
+            $file   = array_pop($dirs);            
+            $filename = dirname(__FILE__) . '/classes/'
+                . ( empty($dirs) ? '' : implode('/', $dirs) . '/'  )
+                . $file . '.php';            
+            
+            if (file_exists($filename))
+            { 
+                require_once $filename;
+                
+                if (class_exists($classname))
+                { 
+                    return;
+                }
+            }                         
         }
-
+        
         $dirs   = explode('_', $classname);
         $prefix = count($dirs) > 1 ? array_shift($dirs) : '';
         $file   = array_pop($dirs);
-
+        
         // ����� ����������?
         if ($prefix != 'MH') {
             $filename = $_SERVER['DOCUMENT_ROOT'].'/bitrix/php_interface/include/shared/'

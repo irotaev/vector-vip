@@ -1,14 +1,16 @@
 <?php
-$articleMapper = new VV_Articles_ArticleMapper;
+use VV\Articles as NSArticles;
+
+$articleMapper = new NSArticles\ArticleMapper;
 
 $article = $articleMapper->getByIblockID(4, array('pageSize' => 1));
 
-if (current($article) instanceof VV_Articles_Article) 
+if (current($article) instanceof NSArticles\Article) 
 {
     $article = current($article);
 } else 
 {
-    $article = new VV_Articles_Article;
+    $article = new NSArticles\Article;
 }
 
 $arResult['abouCompany'] = $article; 

@@ -1,5 +1,7 @@
 <?php
-class VV_Articles_ArticleDB
+namespace VV\Articles;
+
+class ArticleDB
 {
     protected $_iblockId;
 
@@ -44,7 +46,7 @@ class VV_Articles_ArticleDB
         }
 
         if (isset($params['pageSize'])) {
-            $cacheId .= '+ps'.$params['pageSize'].'-'.CDBResult::navStringForCache($params['pageSize']);
+            $cacheId .= '+ps'.$params['pageSize'].'-'.\CDBResult::navStringForCache($params['pageSize']);
         }
 
         if (isset($params['sort'])) {
@@ -54,7 +56,7 @@ class VV_Articles_ArticleDB
         }
 
         // ��������� ���
-        $cache = new CPhpCache;
+        $cache = new \CPhpCache;
         if (false && $cache->initCache($this->_cacheTime, $cacheId, $this->_cacheDir)) {
 
             $vars = $cache->getVars();
@@ -73,12 +75,12 @@ class VV_Articles_ArticleDB
         }
 
         // � ���� ���
-        CMOdule::includeModule('iblock');
+        \CMOdule::includeModule('iblock');
 
         $filter['IBLOCK_ID'] = isset($filter['IBLOCK_ID']) ? $filter['IBLOCK_ID'] : $this->_iblockId;
         $filter['ACTIVE'] = 'Y';
         
-        $this->_dbResult = CIBlockElement::getList(
+        $this->_dbResult = \CIBlockElement::getList(
             $params['sort'],
             $filter,
             false,

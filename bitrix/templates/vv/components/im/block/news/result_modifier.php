@@ -1,6 +1,7 @@
 <?php
+use VV\Articles as NSArticles;
 
-$articleMapper = new VV_Articles_ArticleMapper;
+$articleMapper = new NSArticles\ArticleMapper;
 
 if (isset($arParams["template"]))
 {

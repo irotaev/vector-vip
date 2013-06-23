@@ -1,17 +1,19 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
-$articleMapper = new VV_Articles_ArticleMapper;
+use VV\Articles as NSArticles;
+
+$articleMapper = new  NSArticles\ArticleMapper;
 
 // Статья на главной (о компании)
 $article = $articleMapper->getByIblockID(4, array('pageSize' => 1));
 
-if (current($article) instanceof VV_Articles_Article) 
+if (current($article) instanceof NSArticles\Article) 
 {
     $article = current($article);
 } else 
 {
-    $article = new VV_Articles_Article;
+    $article = new NSArticles\Article;
 }
 
 $arResult['article'] = $article; 
@@ -21,7 +23,7 @@ $ourWorksArticles = $articleMapper->getByIblockID(2, array('pageSize' => 15));
 
 if (!is_array($ourWorksArticles))
 {
-    $ourWorksArticle = new VV_Articles_Article;
+    $ourWorksArticle = new NSArticles\Article;
 }
 else 
 {

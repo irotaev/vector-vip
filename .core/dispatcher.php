@@ -22,8 +22,8 @@ if ($route) { // ���� ������
             'im:block', 
             $route['module'], 
             $route['params']
-        );
-        require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
+        ); 
+        require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php"); 
     }
     
     

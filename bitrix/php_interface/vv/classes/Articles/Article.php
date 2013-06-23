@@ -1,6 +1,8 @@
 <?php
+namespace VV\Articles;
+use VV\Image as NSImage;
 
-class VV_Articles_Article
+class Article
 {
     private $_id;
     private $_name;
@@ -10,8 +12,7 @@ class VV_Articles_Article
     private $_code;     
     private $_previewImage;
     private $_imageGallery;
-    
-    private $_imageMapper;
+       
     private $_articleMapper;
     private $_photoGalleryID;
     private $_previewImgID;
@@ -28,16 +29,15 @@ class VV_Articles_Article
         
         if (isset($init['photoGalleryID']))
         {  
-            $this->_articleMapper = new VV_Articles_ArticleMapper;
-            $this->_imageMapper = new VV_Image_Local;
+            $this->_articleMapper = new ArticleMapper;            
             
             $imagesID = $this->_articleMapper->getByIblockID(5, array(), (int)$init['photoGalleryID']);
                         
             $images = array();
             foreach ($imagesID as $imageID)
             {
-                $imagePath = CFile::GetPath((int)$imageID->previewImgID);                
-                $image = new VV_Image_Local($imagePath);
+                $imagePath = \CFile::GetPath((int)$imageID->previewImgID);                                
+                $image = new NSImage\Image(((int)$imageID->previewImgID));
                 array_push($images, $image);
             }
             $this->_imageGallery = $images;

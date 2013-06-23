@@ -41,9 +41,9 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в мос
                                     <?if ($counter == 1 || $counter  % 3 == 0):?>
                                     <!--<tr>-->
                                     <?endif;?>
-                                    <div class="gallery-item">     
-                                        <a class="fancybox" href="<?=$image->url?>" title="<?=$arResult["ourWorksArticle"]->name?>" rel="group1"> 
-                                            <img src="<?=$image->crop(206, 140)->url?>" alt=""/>
+                                    <div class="gallery-item">   
+                                        <a class="fancybox" href="<?=$image->GetUrl()?>" title="<?=$arResult["ourWorksArticle"]->name?>" rel="group1"> 
+                                            <img src="<?=$image->Crop(206, 140)->GetUrl()?>" alt=""/>
                                         </a></div>
                                     <?$counter ++;?>    
                                     <?if ($counter == 1 || $counter  % 3 == 0):?>

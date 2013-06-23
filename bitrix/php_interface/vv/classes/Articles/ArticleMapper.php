@@ -1,14 +1,17 @@
 <?php
+namespace VV\Articles;
+use VV\Articles as NSArticles;
+
 /**
  * 
  */
-class VV_Articles_ArticleMapper
+class ArticleMapper
 {
     protected $_db;
 
     public function __construct()
     {
-        $this->_db = new VV_Articles_ArticleDB;
+        $this->_db = new NSArticles\ArticleDB;
     }    
     
     public function getAll($params = array())
@@ -51,9 +54,9 @@ class VV_Articles_ArticleMapper
     protected function _map($row = array())
     {  
         if (empty($row)) {
-            return new VV_Articles_Article;
+            return new NSArticles\Article;
         }
-        return new VV_Articles_Article(array(
+        return new NSArticles\Article(array(
             'id' => $row['ID'],
             'name' => $row['NAME'],
             'detailText' => $row['DETAIL_TEXT'],
