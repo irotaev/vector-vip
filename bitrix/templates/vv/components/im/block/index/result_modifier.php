@@ -19,19 +19,26 @@ if (current($article) instanceof NSArticles\Article)
 $arResult['article'] = $article; 
 
 // Блок наши работы
-$ourWorksArticles = $articleMapper->getByIblockID(2, array('pageSize' => 15));
+//$ourWorksArticles = $articleMapper->getByIblockID(2, array('pageSize' => 15));
 
-if (!is_array($ourWorksArticles))
+$ourWorksArticles = $articleMapper->GetCompanyWorkFromEachSection();
+
+if(!is_array($ourWorksArticles))
 {
-    $ourWorksArticle = new NSArticles\Article;
-}
-else 
-{
-    $elemNum = array_rand($ourWorksArticles);
-    $ourWorksArticle = $ourWorksArticles[$elemNum];
+  $ourWorksArticles = array();  
 }
 
-$arResult['ourWorksArticle'] = $ourWorksArticle; 
+//if (!is_array($ourWorksArticles))
+//{
+//    $ourWorksArticle = new NSArticles\Article;
+//}
+//else 
+//{
+//    $elemNum = array_rand($ourWorksArticles);
+//    $ourWorksArticle = $ourWorksArticles[$elemNum];
+//}
+
+$arResult['ourWorksArticle'] = $ourWorksArticles; 
 
 
 

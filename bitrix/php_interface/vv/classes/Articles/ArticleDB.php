@@ -11,7 +11,7 @@ class ArticleDB
     protected $_cacheDir = '';
 
     protected $_commonSelect = array(
-        'ID', 'CODE', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PROPERTY_PHOTOGALLERY',
+        'ID', 'CODE', 'IBLOCK_ID', 'IBLOCK_SECTION_ID', 'NAME', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PROPERTY_PHOTOGALLERY',
         'PREVIEW_PICTURE',
         'PROPERTY_KEYWORDS', 'PROPERTY_DESCRIPTION', 'PROPERTY_CANONICAL',
         'PROPERTY_GOOGLEADWORDS', 'PROPERTY_INDEX_FOLLOW', "DATE_ACTIVE_FROM" 
@@ -33,11 +33,11 @@ class ArticleDB
     { 
         // ����������� ������
         ksort($filter);
-        foreach($filter as &$f) {
-            if (is_array($f)) {
-                sort($f);
-            }
-        }
+//        foreach($filter as &$f) {
+//            if (is_array($f)) {
+//                sort($f);
+//            }
+        //}
 
         // ��������� � id ���� ��� ��������� ���������
         $cacheId = serialize($filter);
@@ -62,7 +62,7 @@ class ArticleDB
             $vars = $cache->getVars();
 
             // ��� ����, ����� ������������ ����������� ���������, ��������� CDBResult
-            $this->_dbResult = new CDBResult;
+            $this->_dbResult = new \CDBResult;
             if (isset($params['pageSize'])) {
                 $this->_dbResult->InitFromArray(
                     (int)$vars['total'] > 0 ? array_fill(0, $vars['total'], 0) : array()

@@ -345,12 +345,12 @@ $(document).ready(function() {
     );
     VVL.Scrolling_M.afterload();
 
-    // Включаю плагин подсказок
-//    $('#home-gallery-preview .gallery a').poshytip({
-//        className: 'tip-darkgray',
-//        bgImageFrameSize: 11,
-//        offsetX: -25
-//    });
+     //Включаю плагин подсказок
+    $('.photo-gallery a').poshytip({
+        className: 'tip-darkgray',
+        bgImageFrameSize: 11,
+        offsetX: -25
+    });
 
     // Включаю плагин фотогалереи
     $('.fancybox').fancybox({

@@ -12,6 +12,7 @@ class Article
     private $_code;     
     private $_previewImage;
     private $_imageGallery;
+    private $_SectionName;
        
     private $_articleMapper;
     private $_photoGalleryID;
@@ -26,13 +27,13 @@ class Article
         $this->_previewText = isset($init["previewText"]) ? $init['previewText'] : '';
         $this->_code = isset($init["code"]) ? $init['code'] : '';
         $this->_previewImgID = isset($init["previewImgID"]) ? $init['previewImgID'] : '';
+        $this->_SectionName = isset($init['SectionName']) ? $init['SectionName'] : null;
         
         if (isset($init['photoGalleryID']))
         {  
             $this->_articleMapper = new ArticleMapper;            
-            
+
             $imagesID = $this->_articleMapper->getByIblockID(5, array(), (int)$init['photoGalleryID']);
-                        
             $images = array();
             foreach ($imagesID as $imageID)
             {

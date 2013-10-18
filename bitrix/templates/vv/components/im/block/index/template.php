@@ -32,17 +32,18 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в мос
                         </div>
                     </article>
 
-                    <div id="home-gallery-preview" class="av-block">
-                        <header class="av-header"><span>Наши работы : <?=$arResult["ourWorksArticle"]->name?></span></header>
+                    <div id="home-gallery-preview" class="av-block">  
+                        <header class="av-header"><span>Наши работы: <?=$arResult["ourWorksArticle"]->name?></span></header>
 
                         <div class="av-content photo-gallery">
                                     <?$counter = 1;?>
-                                    <?  foreach ($arResult["ourWorksArticle"]->imageGallery as $image):?>
+                                    <?  foreach ($arResult["ourWorksArticle"] as $companyWork):?>
+                                    <?$image = $companyWork->imageGallery[array_rand($companyWork->imageGallery)];?>
                                     <?if ($counter == 1 || $counter  % 3 == 0):?>
                                     <!--<tr>-->
                                     <?endif;?>
                                     <div class="gallery-item">   
-                                        <a class="fancybox" href="<?=$image->GetUrl()?>" title="<?=$arResult["ourWorksArticle"]->name?>" rel="group1"> 
+                                        <a class="fancybox" href="<?=$image->GetUrl()?>" title="<?=$companyWork->SectionName?>" rel="group1"> 
                                             <img src="<?=$image->Crop(206, 140)->GetUrl()?>" alt=""/>
                                         </a></div>
                                     <?$counter ++;?>    
