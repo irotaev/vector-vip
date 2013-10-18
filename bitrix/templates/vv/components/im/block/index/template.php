@@ -6,7 +6,7 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в мос
 
 <div class="scrolling-block">
     <header class="h1-header av-block">
-        <div class="av-header"><h1>Главная страница строительной компании vector-vip2222</h1></div>
+        <div class="av-header"><h1>Главная страница строительной компании vector-vip</h1></div>
     </header>
 
     <div class="content-for-edit">
