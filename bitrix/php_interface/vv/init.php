@@ -1,13 +1,12 @@
 <?php
-
-// Спецпроектовый фреймворк
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 define( 'LOG_FILENAME', $_SERVER['DOCUMENT_ROOT'] . '/_sb/mh_log.txt' );
 include_once ($_SERVER['DOCUMENT_ROOT'] . '/bitrix/php_interface/all/libraries/Site.php');
 
 require_once 'FrontSite.php';
 //require_once 'classes/Facebook/facebook.php';
 
-// битрикс переопределяет вывод ошибок
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 \MH\FrontSite::o()->setErrorLevel();
 
 AddEventHandler( 'main', 'OnEpilog', Array( \MH\FrontSite::o()->meta, 'setupBitrixMeta' ) );
@@ -24,7 +23,7 @@ function OnBeforeUserAddHandler( &$arFields )
 {
     if ( $arFields['UF_RULES'] != '1' && empty( $arFields['EXTERNAL_AUTH_ID'] ) ) {
         global $APPLICATION;
-        $APPLICATION->throwException( "Вы должны принять лицензионное соглашение" );
+        $APPLICATION->throwException( "пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" );
         return false;
     }
 }

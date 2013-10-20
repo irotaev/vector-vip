@@ -30,7 +30,3 @@ if(!is_array($ourWorksArticles))
 
 $arResult['ourWorksArticle'] = $ourWorksArticles; 
 
-
-
-
-
