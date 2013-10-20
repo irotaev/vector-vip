@@ -38,7 +38,8 @@ $routes = array(
     ),
     
     'our_works'     => array(
-        'rule'          => '^/nashi-raboti/$',
-        'module'    => 'our_works'
+        'rule'          => '^/nashi-raboti/([0-9]*)$',
+        'module'    => 'our_works',
+        'rule_params' => array(1 => 'WORK_SECTION_ID')
     ) 
 );

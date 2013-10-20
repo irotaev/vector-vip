@@ -57,8 +57,14 @@ class ArticleMapper
         
         while($companySection = $sectionArrayIds->GetNext())
         {
-            $companyWork = current($this->_db->fetch(array('IBLOCK_ID' => 2, 'SECTION_ID' => $companySection["ID"]), array('pageSize' => 1))); 
-            $companyWorks[$companyWork['ID']] = $this->_map($companyWork);
+            $companyWorkRow = current($this->_db->fetch(array('IBLOCK_ID' => 2, 'SECTION_ID' => $companySection["ID"]), array('pageSize' => 1))); 
+            $companyWork = $this->_map($companyWorkRow);
+            
+            $sectionCompanyWork = new EachSectionCompanyWork();
+            $sectionCompanyWork->CompanyWork = $companyWork;
+            $sectionCompanyWork->SectionId = $companySection["ID"];
+            
+            array_push($companyWorks, $sectionCompanyWork);
         }
         
         return $companyWorks;
@@ -72,7 +78,7 @@ class ArticleMapper
     protected function _map($row = array())
     {  
         if (empty($row)) {
-            return new NSArticles\Article;
+            return new Article;
         }
         
         $sectionName = null;
@@ -99,4 +105,34 @@ class ArticleMapper
         ));
     }
 
+}
+
+class EachSectionCompanyWork
+{
+    private $_SectionId;
+    private $_CompanyWork;
+    
+    public function __get($name) 
+    {
+        switch($name)
+        {
+            default :
+                return $this->{"_".$name};
+                break;
+        }
+    }
+    
+    public function __set($name, $value) 
+    {
+        switch($name)
+        {
+            case "CompanyWork":
+                if ($value instanceof Article)
+                    $this->_CompanyWork = $value;
+                break;
+            default :
+                $this->{"_".$name} = $value;
+                break;
+        }
+    }
 }

@@ -37,10 +37,10 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в мос
 
                         <div class="av-content photo-gallery">
                                     <?  foreach ($arResult["ourWorksArticle"] as $companyWork):?>
-                                    <?$image = $companyWork->imageGallery[array_rand($companyWork->imageGallery)];?>
+                                    <?$image = $companyWork->CompanyWork->imageGallery[array_rand($companyWork->CompanyWork->imageGallery)];?>
                                     <?if ($image instanceof VV\Image\Image):?>
                                     <div class="gallery-item">   
-                                        <a class="fancybox" href="<?=$image->GetUrl()?>" title="<?=$companyWork->SectionName?>" rel="group1"> 
+                                        <a href="<?="/nashi-raboti/$companyWork->SectionId"?>" title="<?=$companyWork->CompanyWork->SectionName?>"> 
                                             <img src="<?=$image->Crop(206, 140)->GetUrl()?>" alt=""/>
                                         </a></div>
                                     <?endif;?>

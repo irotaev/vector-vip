@@ -3,7 +3,9 @@ use VV\Articles as NSArticles;
 
 $articleMapper = new NSArticles\ArticleMapper;
 
-$ourWorksArticles = $articleMapper->getByIblockID(2, array('pageSize' => 10));
+$workSectionId = $arParams["WORK_SECTION_ID"] ? $arParams["WORK_SECTION_ID"] : null;
+
+$ourWorksArticles = $articleMapper->getByIblockID(2, array('pageSize' => 10), $workSectionId);
 
 if (!(current($ourWorksArticles) instanceof NSArticles\Article)) 
 {

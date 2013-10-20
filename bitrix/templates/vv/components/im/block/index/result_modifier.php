@@ -28,16 +28,6 @@ if(!is_array($ourWorksArticles))
   $ourWorksArticles = array();  
 }
 
-//if (!is_array($ourWorksArticles))
-//{
-//    $ourWorksArticle = new NSArticles\Article;
-//}
-//else 
-//{
-//    $elemNum = array_rand($ourWorksArticles);
-//    $ourWorksArticle = $ourWorksArticles[$elemNum];
-//}
-
 $arResult['ourWorksArticle'] = $ourWorksArticles; 
 
 
