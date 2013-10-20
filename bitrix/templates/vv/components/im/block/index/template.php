@@ -41,7 +41,7 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в мос
                                     <?if ($image instanceof VV\Image\Image):?>
                                     <div class="gallery-item">   
                                         <a href="<?="/nashi-raboti/$companyWork->SectionId"?>" title="<?=$companyWork->CompanyWork->SectionName?>"> 
-                                            <img src="<?=$image->Crop(206, 140)->GetUrl()?>" alt="<?=$companyWork->CompanyWork->SectionName?>"/>
+                                            <img src="<?=$image->Crop(210, 140)->GetUrl()?>" alt="<?=$companyWork->CompanyWork->SectionName?>"/>
                                         </a></div>
                                     <?endif;?>
                                     <?  endforeach;?>   
