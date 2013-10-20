@@ -33,7 +33,7 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в мос
                     </article>
 
                     <div id="home-gallery-preview" class="av-block">  
-                        <header class="av-header"><span>Наши работы222222: <?=$arResult["ourWorksArticle"]->name?></span></header>
+                        <header class="av-header"><span>Наши работы: <?=$arResult["ourWorksArticle"]->name?></span></header>
 
                         <div class="av-content photo-gallery">
                                     <?$counter = 1;?>
@@ -53,6 +53,7 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в мос
                                     <?  endforeach;?>   
 
                                     <div class="clear-both"></div>
+                                    <div>Hellow!!!!!</div>
                         </div>
                     </div>
                 </section><!-- #changebleContent-->
