@@ -53,6 +53,7 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир в мос
                                     <?  endforeach;?>   
 
                                     <div class="clear-both"></div>
+                                    <div class="clear-both"></div>
                         </div>
                     </div>
                 </section><!-- #changebleContent-->
