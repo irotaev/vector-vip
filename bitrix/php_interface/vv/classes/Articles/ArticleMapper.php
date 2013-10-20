@@ -60,7 +60,7 @@ class ArticleMapper
             $companyWorkRow = current($this->_db->fetch(array('IBLOCK_ID' => 2, 'SECTION_ID' => $companySection["ID"]), array('pageSize' => 1))); 
             $companyWork = $this->_map($companyWorkRow);
             
-            $sectionCompanyWork = new EachSectionCompanyWork();
+            $sectionCompanyWork = new \VV\EachSectionCompanyWork\EachSectionCompanyWork();
             $sectionCompanyWork->CompanyWork = $companyWork;
             $sectionCompanyWork->SectionId = $companySection["ID"];
             
@@ -105,34 +105,4 @@ class ArticleMapper
         ));
     }
 
-}
-
-class EachSectionCompanyWork
-{
-    private $_SectionId;
-    private $_CompanyWork;
-    
-    public function __get($name) 
-    {
-        switch($name)
-        {
-            default :
-                return $this->{"_".$name};
-                break;
-        }
-    }
-    
-    public function __set($name, $value) 
-    {
-        switch($name)
-        {
-            case "CompanyWork":
-                if ($value instanceof Article)
-                    $this->_CompanyWork = $value;
-                break;
-            default :
-                $this->{"_".$name} = $value;
-                break;
-        }
-    }
 }
