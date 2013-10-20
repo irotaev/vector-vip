@@ -59,7 +59,7 @@ $APPLICATION->SetPageProperty("keywords", 'ремонт квартир стро�
                                 <?endif;?>
                                 <div class="gallery-item">     
                                     <a class="fancybox" href="<?=$image->GetUrl()?>" title="<?=$article->name?>" rel="group<?=$counter1?>"> 
-                                        <img src="<?=$image->Crop(206, 140)->GetUrl()?>" alt="<?=$article->name?>"/>
+                                        <img src="<?=$image->Crop(210, 140)->GetUrl()?>" alt="<?=$article->name?>"/>
                                     </a></div>
                                 <?$counter ++;?>    
                                 <?if ($counter2 == 1 || $counter2  % 3 == 0):?>
