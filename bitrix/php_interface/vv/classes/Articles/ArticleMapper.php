@@ -16,6 +16,18 @@ class ArticleMapper
         \CMOdule::includeModule('iblock');
     }    
     
+    public function get($filter)
+    {
+        $result = array();
+        
+        foreach($this->_db->fetch($filter) as $row)
+        {
+            $result[$row['ID']] = $this->_map($row);
+        }
+        
+        return $result;
+    }
+    
     public function getAll($params = array())
     {
         $result = array();
@@ -35,12 +47,32 @@ class ArticleMapper
                 
         array_push($filter, $sectionFilter);
         
-        foreach($this->_db->fetch($filter, $params) as $row) { 
-            $result[$row['ID']] = $this->_map($row);
-        }
-        return $result;
+        return $this->getIblock($filter, $params);
     }
     
+    public function getByIblockCode($code, $params = array(), $sectionId = null)
+    {
+        $result = array();
+        
+        $filter = array('IBLOCK_CODE' => $iblockID);
+        if (isset($sectionID))
+            $filter["SECTION_ID"] = $sectionID;
+                
+        array_push($filter, $sectionFilter);
+        
+        return $this->getIblock($filter, $params);
+    }
+    
+    private function getIblock($filter, $params = array())
+    {
+        foreach($this->_db->fetch($filter, $params) as $row)
+        {
+            $result[$row['ID']] = $this->_map($row);
+        }
+        
+        return $result;
+    }
+
     public function getByIblockSection($iblockID, $params = array())
     {                                                                                                                                                          
         $result = array();

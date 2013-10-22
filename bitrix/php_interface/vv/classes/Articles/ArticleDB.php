@@ -32,53 +32,48 @@ class ArticleDB
     public function fetch($filter, $params = array())
     { 
         // ����������� ������
-        ksort($filter);
-//        foreach($filter as &$f) {
-//            if (is_array($f)) {
-//                sort($f);
-//            }
-        //}
+//        ksort($filter);
 
         // ��������� � id ���� ��� ��������� ���������
         $cacheId = serialize($filter);
-        if (isset($params['count'])) {
-            $cacheId .= '+cnt'.$params['count'];
-        }
-
-        if (isset($params['pageSize'])) {
-            $cacheId .= '+ps'.$params['pageSize'].'-'.\CDBResult::navStringForCache($params['pageSize']);
-        }
-
-        if (isset($params['sort'])) {
-            $cacheId .= '+s'.  serialize($params['sort']);
-        } else {
-            $params['sort'] = array('id'=> 'desc');
-        }
-
-        // ��������� ���
-        $cache = new \CPhpCache;
-        if (false && $cache->initCache($this->_cacheTime, $cacheId, $this->_cacheDir)) {
-
-            $vars = $cache->getVars();
-
-            // ��� ����, ����� ������������ ����������� ���������, ��������� CDBResult
-            $this->_dbResult = new \CDBResult;
-            if (isset($params['pageSize'])) {
-                $this->_dbResult->InitFromArray(
-                    (int)$vars['total'] > 0 ? array_fill(0, $vars['total'], 0) : array()
-                );
-                if (isset($params['pageSize'])) {
-                    $this->_dbResult->navStart($params['pageSize'], true, $vars['page']);
-                }
-            }
-            return $vars['items'];
-        }
+//        if (isset($params['count'])) {
+//            $cacheId .= '+cnt'.$params['count'];
+//        }
+//
+//        if (isset($params['pageSize'])) {
+//            $cacheId .= '+ps'.$params['pageSize'].'-'.\CDBResult::navStringForCache($params['pageSize']);
+//        }
+//
+//        if (isset($params['sort'])) {
+//            $cacheId .= '+s'.  serialize($params['sort']);
+//        } else {
+//            $params['sort'] = array('id'=> 'desc');
+//        }
+//
+//        // ��������� ���
+       $cache = new \CPhpCache;
+//        if (false && $cache->initCache($this->_cacheTime, $cacheId, $this->_cacheDir)) {
+//
+//            $vars = $cache->getVars();
+//
+//            // ��� ����, ����� ������������ ����������� ���������, ��������� CDBResult
+//            $this->_dbResult = new \CDBResult;
+//            if (isset($params['pageSize'])) {
+//                $this->_dbResult->InitFromArray(
+//                    (int)$vars['total'] > 0 ? array_fill(0, $vars['total'], 0) : array()
+//                );
+//                if (isset($params['pageSize'])) {
+//                    $this->_dbResult->navStart($params['pageSize'], true, $vars['page']);
+//                }
+//            }
+//            return $vars['items'];
+//        }
 
         // � ���� ���
         \CMOdule::includeModule('iblock');
 
-        $filter['IBLOCK_ID'] = isset($filter['IBLOCK_ID']) ? $filter['IBLOCK_ID'] : $this->_iblockId;
-        $filter['ACTIVE'] = 'Y';
+        //$filter['IBLOCK_ID'] = isset($filter['IBLOCK_ID']) ? $filter['IBLOCK_ID'] : $this->_iblockId;
+//        $filter['ACTIVE'] = 'Y';
         
         $this->_dbResult = \CIBlockElement::getList(
             $params['sort'],

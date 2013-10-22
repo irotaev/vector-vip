@@ -26,11 +26,12 @@
       h1 {
         margin-left: 15px;
         line-height: 25px;
-        color: $av-content-bg;
+        //color: $av-content-bg;
+        color: $header-red;
         font-weight: bold;
         font-size: 20px;
         $__P: $header-red;
-        @include text-shadow(-1px 0 $__P, 0 1px $__P, 1px 0 $__P, 0 -1px $__P);
+        //@include text-shadow(-1px 0 $__P, 0 1px $__P, 1px 0 $__P, 0 -1px $__P);
       }
     }
   }

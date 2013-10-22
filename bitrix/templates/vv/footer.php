@@ -22,8 +22,8 @@
             </div>
 
             <div id="footer-copyright" class="info">
-                <span class="copyright"><a href="#">Copyright (c) <br/> Все права защищены</a></span>
-                <span class="policy"><a href="#">Соглашение о <br/> конфиденциальности</a></span>
+                <span class="copyright"><a href="/copyright/">Copyright (c) Все права защищены</a></span>
+<!--                <span class="policy"><a href="#">Соглашение о <br/> конфиденциальности</a></span>-->
             </div>
         </div>
     </div>
